@@ -1,11 +1,12 @@
-// App.js
+
 
 import React, { useState } from 'react';
-import Learner from './components/Learner'; // Importing Learner component
+import Learner from './components/Learner'; // Importing the Learner component
+import './App.css'; // Importing the CSS file
 
+// Define the App component
 function App() {
-  // Initialize state with learners array
-  const [learnerData, setLearnerData] = useState({    //
+  const [learnerData] = useState({
     learners: [
       {
         name: 'Cait Yomorta',
@@ -39,9 +40,8 @@ function App() {
   });
 
   return (
-    <div>
+    <div className="app-container">
       <h1>Learner Profiles</h1>
-      {/* Mapping over learners to render each Learner component */}
       {learnerData.learners.map((learner, index) => (
         <Learner key={index} name={learner.name} bio={learner.bio} scores={learner.scores} />
       ))}
